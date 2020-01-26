@@ -30,12 +30,13 @@ def importTitles():
     with open('episodesList.txt','w') as file:
         for idT, title in titles:
             file.write('%s\n' % title)
+            
+    print('List of episodes succesful imported')
 
 #Get titles list       
 def getTitles(fileName):
     titles=[]
     with open(fileName,'r') as file:
         for title in file:
-            titles.append(re.sub('\n','',title))
-            
+            titles.append(re.sub('\n','',title))        
     return titles
