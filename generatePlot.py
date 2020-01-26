@@ -7,7 +7,6 @@ MLP:FiM Episode's plot generator based on n-grams
 
 import glob
 import re
-from nltk.util import ngrams
 from collections import defaultdict
 import random
 import os
@@ -22,11 +21,9 @@ def generateEpisode():
                 script=script+line
     script=script.replace('\n\n', '99999 ')
     
-    #Create trigrams list        
-    trigramsTmp = ngrams(script.split(), 3)
-    trigrams=[]
-    for grams in trigramsTmp:
-      trigrams.append(grams)
+    #Create trigrams list
+    words=script.split()           
+    trigrams=zip(words,words[1:],words[2:])
     
     #Generate transitions methods:
     #Have 2 previous words -> get a new word

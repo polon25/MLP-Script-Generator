@@ -6,7 +6,6 @@ MLP:FiM Scripts generator based on n-grams
 """
 
 import episodesList as ep
-from nltk.util import ngrams
 from collections import defaultdict
 import random
 import re
@@ -29,10 +28,8 @@ def generateScript():
                 script=script+line
     
     #Create trigrams list
-    trigramsTmp = ngrams(script.split(), 3)
-    trigrams=[]
-    for grams in trigramsTmp:
-      trigrams.append(grams)
+    words=script.split()           
+    trigrams=zip(words,words[1:],words[2:])
     
     #Generate transitions methods:
     #Have 2 previous words -> get a new word
