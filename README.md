@@ -1,5 +1,5 @@
 # MLP-Script-Generator
-A small, funny Python project - simple MLP:FiM episode's script generator based on original's ones and n-grams.
+A small, funny Python project - simple MLP:FiM episode script generator based on original's ones and n-grams.
 
 To generate transcription/episode summary:
 1. Import list of episodes titles
